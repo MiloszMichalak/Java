@@ -133,7 +133,7 @@ public class KartaPracy6 {
         suma = 0;
         rytm = 2;
         for (int i = 0; i < n; i++) {
-            if (i % 2 == 1){
+            if (i % 2 == 0){
                 suma += rytm;
             }
             else {
@@ -164,7 +164,7 @@ public class KartaPracy6 {
             }
             rytm = (int) Math.pow(2, i);
         }
-        System.out.println("Suma n elementow ciagu zakreconego wynosi: " + suma);
+        System.out.println("Suma n elementow ciagu zakreconego wynosi: " + iloczyn);
 
         System.out.println();
 
@@ -172,15 +172,15 @@ public class KartaPracy6 {
         System.out.println("Zadanie 10");
         System.out.println("Podaj jak dlugi ma byc ciag");
         n = input.nextInt();
-        iloczyn = 0;
+        suma = 0;
         rytm = 1;
         silnia = 1;
         for (int i = 0; i < n; i++) {
-            iloczyn+=silnia;
+            suma+=silnia;
             rytm++;
             silnia*=rytm;
         }
-        System.out.println("Iloczyn n elementow ciagu silaczy wynosi: " + iloczyn);
+        System.out.println("Iloczyn n elementow ciagu silaczy wynosi: " + suma);
 
         System.out.println();
 
@@ -188,7 +188,7 @@ public class KartaPracy6 {
         System.out.println("Zadanie 11");
         System.out.println("Podaj jak dlugi ma byc ciag");
         n = input.nextInt();
-        suma = 0;
+        float Floatsuma = 0;
         licznik = 1;
         mianownik = 1;
         for (int i = 0; i < n; i++) {
@@ -196,7 +196,7 @@ public class KartaPracy6 {
             licznik+=2;
             mianownik+=licznik;
         }
-        System.out.println("Suma n elementow ciagu niebanalnego1 wynosi: " + suma);
+        System.out.println("Suma n elementow ciagu niebanalnego1 wynosi: " + Floatsuma);
 
         System.out.println();
 
@@ -214,7 +214,7 @@ public class KartaPracy6 {
             ciag1+=2;
             ciag2+=ciag1;
         }
-        System.out.println("Suma n elementow ciagu niebanalnego2 wynosi: " + licznik/mianownik);
+        System.out.println("Suma n elementow ciagu niebanalnego2 wynosi: " + (float)licznik/mianownik);
 
         System.out.println();
 
@@ -226,7 +226,7 @@ public class KartaPracy6 {
         licznik = 2;
         mianownik = 3;
         for (int i = 2; i < n+2; i++) {
-            suma += licznik / mianownik;
+            Floatsuma += licznik / mianownik;
             licznik+=2;
             mianownik = (int)(Math.pow(i, 3)+2);
         }
@@ -246,9 +246,9 @@ public class KartaPracy6 {
             licznik *= ciag1;
             mianownik *= ciag2;
             ciag1++;
-            ciag2 = ciag2*2+1;
+            ciag2 = (ciag2*2)+1;
         }
-        System.out.println("Iloczyn n elementow ciagu totalnego wynosi: " + licznik/mianownik);
+        System.out.println("Iloczyn n elementow ciagu totalnego wynosi: " + (float)licznik/mianownik);
 
         System.out.println();
 
@@ -262,13 +262,13 @@ public class KartaPracy6 {
         mianownik = 1;
         licznik = 1;
         for (int i = 0; i < n; i++) {
+            licznik *= sumafib;
+            mianownik *= 2;
             sumafib = fib1 + fib2;
             fib1 = fib2;
             fib2 = sumafib;
-            licznik *= sumafib;
-            mianownik *= 2;
             rytm++;
         }
-        System.out.println("Iloczyn n elemntow ciagu ekstrelamnego wynosi: " + licznik/mianownik);
+        System.out.println("Iloczyn n elemntow ciagu ekstrelamnego wynosi: " + (float)licznik/mianownik);
     }
 }
