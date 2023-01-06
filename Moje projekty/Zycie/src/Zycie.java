@@ -92,6 +92,7 @@ public class Zycie {
             if (poziomNajedzenia>12){
                 System.out.println("Przejadles sie.");
                 Czarek.smierc();
+                break;
             }
             if (poziomNajedzenia>10){
                 System.out.println("Jestes zbyt bardzo najedzony. Powienies przestac jesc");
@@ -104,6 +105,7 @@ public class Zycie {
             if (poziomNajedzenia<2){
                 System.out.println("Umarles z glodu");
                 Czarek.smierc();
+                break;
             }
 
         }
