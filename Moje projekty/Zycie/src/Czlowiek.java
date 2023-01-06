@@ -3,7 +3,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.Random;
 
 public class Czlowiek {
-
+    Scanner input = new Scanner(System.in);
     int budzet;
 
     Czlowiek(int budzet) {
@@ -11,7 +11,6 @@ public class Czlowiek {
     }
 
     public int pracuj(int budzet) throws InterruptedException {
-        Scanner input = new Scanner(System.in);
         System.out.println("Jestes w pracy.");
         int zarobione = 0;
         int a = 1;
@@ -62,7 +61,7 @@ public class Czlowiek {
     public int wyrwijAlternatywke(int budzet) {
         Random randomWyrwij = new Random();
         int procentWyrwij = randomWyrwij.nextInt(1, 100);
-        if (procentWyrwij > 30) {
+        if (procentWyrwij < 70) {
             budzet -= 1000;
             System.out.println("Wyrwales alternatywke. Twoj budzet wynosi: " + budzet);
         } else {
@@ -73,13 +72,50 @@ public class Czlowiek {
         return budzet;
     }
 
-    public void samobojstwo() throws InterruptedException {
-        System.out.println("Zabiles sie. Stan konta: 0");
+    public void smierc() throws InterruptedException {
+        System.out.println("Puls: 0");
         for (int i = 0; i < 40; i++) {
-            System.out.print("*");
+            System.out.print("-");
             TimeUnit.MILLISECONDS.sleep(200);
         }
     }
+
+    public double biegnij (double odleglosc ,double waga) throws InterruptedException {
+        double dystans = odleglosc;
+        double km = 0.5;
+        while (odleglosc>0){
+            System.out.println("Przebiegles " + km + "km");
+            odleglosc -= 0.5;
+            km += 0.5;
+            waga -= 0.25;
+            TimeUnit.MILLISECONDS.sleep(400);
+        }
+        System.out.println("Po przebiegnieciu " + dystans + "km Twoja waga wynosi: " + waga + "kg");
+        return waga;
+    }
+
+    public double silownia (int godziny, double waga) throws InterruptedException{
+        int czas = 1;
+        while (godziny > 0){
+            System.out.println("Jestes na silowni: " + czas + " godziny");
+            godziny--;
+            waga -= 0.5;
+            czas ++;
+            TimeUnit.MILLISECONDS.sleep(600);
+        }
+        System.out.println("Po " + (czas-1) + " godzinach na silowni twoja waga wynosi: " + waga + "kg");
+        return waga;
+    }
+
+    public double stanPoziomuNajedzenia(double poziomNajedzenia, double czas){
+        while (czas>0){
+            poziomNajedzenia-=0.3;
+            czas--;
+        }
+        System.out.println("Po tej aktywnosci twoj poziom najedzenia wynosi: " + poziomNajedzenia);
+        return poziomNajedzenia;
+    }
+
 }
 
 
