@@ -5,18 +5,15 @@ public class Calculator {
         Scanner input = new Scanner(System.in);
         double wynik = 0;
 
-        boolean flaga = true;
-        while (flaga){
-            System.out.println("Koniec?: y/n");
-            String KoniecProgramu = input.next();
-            if (KoniecProgramu.equals("y")){
-                System.out.println("Dziekuje za uzywanie mojego kalkulatora");
-                flaga = false;
-                continue;
-            }
-
-            System.out.println("Jaki operator ma byc? : +, -, *, /, nww, nwd, sqrt, pow");
+        while (true){
+            System.out.println("Napisz koniec aby zakonczyc dzialanie kalkulatora \n" +
+                    " Jaki operator ma byc? : +, -, *, /, nww, nwd, sqrt, pow");
             String operator = input.next();
+
+            if (operator.equals("koniec")){
+                System.out.println("Dziekuje za uzywanie mojego kalkulatora");
+                break;
+            }
 
             switch (operator) {
                 case "+" -> {

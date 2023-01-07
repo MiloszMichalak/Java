@@ -9,11 +9,6 @@ public class Operation {
 
     public static double nww (double a, double b){
         double iloczyn = a*b;
-        while (a != b){
-            if (a>b) a-=b;
-            else b-=a;
-        }
-        return iloczyn/a;
+        return iloczyn/nwd(a, b);
     }
-
 }
